@@ -3,6 +3,11 @@
 #+DATE: 2025-08-02
 #+PROPERTY: header-args:scheme :session *guile* :results output :exports both
 
+[[https://github.com/aygp-dr/scheme-category-calculus][https://img.shields.io/badge/Guile-Scheme-blue.svg]]
+[[https://github.com/aygp-dr/scheme-category-calculus/actions][https://img.shields.io/github/actions/workflow/status/aygp-dr/scheme-category-calculus/ci.yml?branch=main]]
+[[https://github.com/aygp-dr/scheme-category-calculus/blob/main/LICENSE][https://img.shields.io/badge/License-MIT-green.svg]]
+[[https://github.com/aygp-dr/scheme-category-calculus/issues][https://img.shields.io/github/issues/aygp-dr/scheme-category-calculus.svg]]
+
 * Guile Scheme Category Theory Calculus Engine
 
 A computational engine for category theory built in Guile Scheme, providing symbolic manipulation, diagram calculation, and proof assistance for categorical mathematics.

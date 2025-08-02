@@ -1,0 +1,62 @@
+gantt
+    title Guile Scheme Category Theory Calculus Engine - Development Roadmap
+    dateFormat  YYYY-MM-DD
+    section Foundation
+    Project Setup           :done,    setup, 2025-08-02, 1d
+    Dependencies Install    :active,  deps, 2025-08-03, 2d
+    Core Algebraic Types    :         algebra, after deps, 4d
+    Symbolic Computation    :         symbolic, after algebra, 5d
+    
+    section Category Theory Core
+    Category Definition     :         categories, after symbolic, 6d
+    Morphism Algebra        :         morphisms, after categories, 5d
+    Composition Engine      :         composition, after morphisms, 4d
+    Identity Laws           :         identity, after composition, 3d
+    
+    section Functor Engine
+    Functor Implementation  :         functors, after identity, 7d
+    Object Mapping          :         obj-map, after functors, 4d
+    Morphism Mapping        :         mor-map, after obj-map, 4d
+    Functor Law Verification:         functor-laws, after mor-map, 5d
+    
+    section Natural Transformations
+    Natural Trans Definition:         nat-trans, after functor-laws, 6d
+    Component Functions     :         components, after nat-trans, 4d
+    Naturality Verification :         naturality, after components, 5d
+    Horizontal Composition  :         horizontal, after naturality, 6d
+    
+    section Monad Algebra
+    Monad Definition        :         monads, after horizontal, 8d
+    Unit Operations         :         unit-ops, after monads, 4d
+    Bind Operations         :         bind-ops, after unit-ops, 5d
+    Monad Law Checking      :         monad-laws, after bind-ops, 6d
+    
+    section Diagram Calculus
+    Commutative Diagrams    :         diagrams, after monad-laws, 7d
+    Path Equivalence        :         paths, after diagrams, 5d
+    Diagram Verification    :         verification, after paths, 6d
+    Counterexample Generation:        counterex, after verification, 4d
+    
+    section Advanced Constructions
+    Adjunctions             :         adjunctions, after counterex, 8d
+    Limits and Colimits     :         limits, after adjunctions, 7d
+    Kan Extensions          :         kan, after limits, 6d
+    Topos Theory            :         topos, after kan, 9d
+    
+    section Computational Applications
+    Type Theory Integration :         type-theory, after topos, 6d
+    Program Semantics       :         semantics, after type-theory, 7d
+    Database Categories     :         databases, after semantics, 5d
+    Concurrency Models      :         concurrency, after databases, 6d
+    
+    section Proof Assistant
+    Theorem Proving         :         theorems, after concurrency, 8d
+    Proof Search            :         proof-search, after theorems, 6d
+    Tactic Development      :         tactics, after proof-search, 7d
+    Interactive Verification:         interactive, after tactics, 5d
+    
+    section Visualization
+    Diagram Rendering       :         rendering, after interactive, 6d
+    ASCII Art Generation    :         ascii-art, after rendering, 4d
+    LaTeX Export            :         latex, after ascii-art, 5d
+    Interactive Exploration :         exploration, after latex, 6d
