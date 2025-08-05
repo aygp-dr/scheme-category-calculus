@@ -1,4 +1,3 @@
-#!/usr/bin/env guile
 ;; Dependency Check for Guile Scheme Category Theory Calculus Engine
 ;; Confirms Guile 3.0+ and mathematical computation capabilities
 

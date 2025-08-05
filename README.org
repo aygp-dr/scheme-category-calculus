@@ -11,6 +11,19 @@
 
 A computational engine for category theory built in Guile Scheme, providing symbolic manipulation, diagram calculation, and proof assistance for categorical mathematics.
 
+** Status
+
+This project is in active development. Core functionality includes:
+
+- ✓ Basic category definitions with axiom checking
+- ✓ Functor implementation with law verification  
+- ✓ Monad algebra with computational semantics
+- ✓ Commutative diagram verification
+- ✓ Natural transformation checking
+- ✓ Category construction macros
+- ⚠ Topos theory integration (planned)
+- ⚠ Homotopy type theory support (planned)
+
 ** Overview
 
 This project implements category theory concepts as executable Scheme code:
@@ -158,60 +171,33 @@ This project implements category theory concepts as executable Scheme code:
 - ~examples/~ :: Mathematical examples and case studies
 - ~proofs/~ :: Formal proof development
 
-** Installation
+** Quick Start
 
 #+BEGIN_SRC bash
+# Clone the repository
 git clone https://github.com/aygp-dr/scheme-category-calculus.git
 cd scheme-category-calculus
 
-# Install mathematical dependencies
-make install-math-deps
+# Check dependencies
+guile3 experiments/000-deps-check/check.scm
 
-# Compile categorical algebra modules
-make compile-algebra
-
-# Run mathematical test suite
-make test-mathematics
-
-# Generate mathematical documentation
-make docs-math
+# Run examples
+guile3 examples/01-basic-category.scm
+guile3 examples/02-functors.scm
+guile3 examples/03-monads.scm
 #+END_SRC
 
-** Mathematical Examples
+** Examples
 
-*** Basic Category Theory
-#+BEGIN_SRC scheme
-;; Category of finite sets
-(define FinSet
-  (make-category
-    #:objects (finite-sets)
-    #:morphisms (set-functions)
-    #:compose set-compose
-    #:id set-identity))
+The ~examples/~ directory contains working demonstrations:
 
-;; Verify category axioms
-(check-associativity FinSet)
-(check-identity-laws FinSet)
-#+END_SRC
+- [[file:examples/01-basic-category.scm][01-basic-category.scm]] - Basic category definitions and axiom verification
+- [[file:examples/02-functors.scm][02-functors.scm]] - Functor implementation with law verification
+- [[file:examples/03-monads.scm][03-monads.scm]] - Maybe monad with computational semantics
+- [[file:examples/04-diagrams.scm][04-diagrams.scm]] - Commutative diagram checking and pullbacks
+- [[file:examples/05-natural-transformations.scm][05-natural-transformations.scm]] - Natural transformations with naturality verification
+- [[file:examples/06-category-macros.scm][06-category-macros.scm]] - Syntactic sugar for category definitions
 
-*** Advanced Constructions
-#+BEGIN_SRC scheme
-;; Kleisli category of a monad
-(define (kleisli-category monad base-category)
-  (make-category
-    #:objects (objects base-category)
-    #:morphisms (lambda (A B) `(-> ,A (,monad ,B)))
-    #:compose (kleisli-compose monad)
-    #:id (monad-unit monad)))
-
-;; Functor categories
-(define (functor-category C D)
-  (make-category
-    #:objects (functors C D)
-    #:morphisms (natural-transformations)
-    #:compose (vertical-composition)
-    #:id (identity-natural-transformation)))
-#+END_SRC
 
 ** Research Applications
 
