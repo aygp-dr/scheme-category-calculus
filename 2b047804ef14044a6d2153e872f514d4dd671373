@@ -1,0 +1,25 @@
+Implementation notes for category theory examples:
+
+Thought process:
+1. Started by examining the existing structure - found only a dependency check script
+2. Created 6 progressive examples to demonstrate core concepts
+3. Each example builds on previous concepts while remaining self-contained
+4. Focused on computational verification of mathematical laws
+
+Debugging/Issues encountered:
+- Initial shebang issue with check.scm - Guile was parsing #\!/usr/bin/env incorrectly
+- Fixed by removing shebang and calling guile3 directly
+- Intentionally left one non-commutative diagram example to show failure cases
+- All examples include verification code to demonstrate correctness
+
+Technical decisions:
+- Used SRFI-9 records for type safety
+- Pattern matching with (ice-9 match) for clarity
+- Kept examples minimal but complete
+- Added visual output to make abstract concepts concrete
+
+Future improvements:
+- Add more advanced category theory concepts (limits, colimits, topoi)
+- Implement visualization for diagram commutation
+- Create a proper module system for reusable components
+- Add property-based testing for law verification
