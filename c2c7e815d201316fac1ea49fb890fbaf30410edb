@@ -1,0 +1,40 @@
+Context: Development Environment Setup
+=======================================
+
+Timing: 2025-08-06, ~5 minutes implementation
+
+Purpose:
+- Set up integrated Scheme development environment
+- Enable REPL-driven development workflow
+- Support literate programming with org-mode
+
+Implementation Considerations:
+- Used .envrc for environment variables (direnv compatible)
+- Configured Emacs with Geiser for Guile Scheme integration
+- Added tmux session management for persistent development sessions
+- Included Paredit for structural editing of S-expressions
+- Enabled org-babel for literate programming support
+
+Technical Choices:
+- Guile 3 as the primary Scheme implementation
+- Geiser for interactive REPL and debugging
+- Paredit for balanced parenthesis editing
+- TRAMP support for potential remote development
+- Project-specific Emacs configuration isolated from global config
+
+Makefile Targets Added:
+- make dev: Start tmux session with configured Emacs
+- make dev-attach: Reconnect to existing session
+- make dev-stop: Terminate development session
+- make dev-status: Check session status and TTY
+
+Known Issues:
+- Emacs packages will auto-install on first run (may take time)
+- Requires tmux and emacs to be installed system-wide
+- Geiser needs guile3 binary in PATH
+
+Future Enhancements:
+- Add support for multiple tmux windows/panes
+- Include debugger configuration
+- Add project-specific snippets
+- Configure automatic code formatting
